@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 4000;
 const workoutRoutes = require('./routes/workouts');
+const userRoutes = require('./routes/user');
 
 // express app
 const app = express();
@@ -14,6 +15,7 @@ app.use(cors());
 
 // routes
 app.use('/api/workouts', workoutRoutes);
+app.use('/api/user', userRoutes);
 
 // connect to DB
 mongoose
